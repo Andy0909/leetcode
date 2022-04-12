@@ -1,0 +1,31 @@
+1.
+class Solution {
+    /**
+     * @param Integer $x
+     * @return Boolean
+     */
+    function isPalindrome($x) {
+        $text = (string) $x;
+		    $number = ''; 
+        for($count = strlen($text); $count >0; $count--){
+            $number = $number.$text[$count-1];
+        }
+        if($number == $text){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
+
+2.
+class Solution {
+    /**
+     * @param Integer $x
+     * @return Boolean
+     */
+    function isPalindrome($x) {
+        return (string)$x === strrev($x);
+    }
+}
