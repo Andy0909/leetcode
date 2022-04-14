@@ -43,7 +43,7 @@ class Solution {
  *
  * @return integer
  */
-public function romanToInt(string $roman): int
+function romanToInt($roman)
 {
     $map = [
         'I' => 1,
