@@ -1,0 +1,32 @@
+class Solution {
+
+    /**
+     * @param String $s
+     * @return Boolean
+     */
+    function isValid($s) {
+        if(strlen($s)%2 != 0){
+            return false;
+        }
+        $characters = [
+            '(' => ')',
+            '{' => '}',
+            '[' => ']'
+        ];
+        $stack = [];
+        for($a=0; $a<strlen($s); $a++){
+            if(isset($characters[$s[$a]])){
+                array_push($stack,$characters[$s[$a]]);
+            }
+            else{
+                if($s[$a] == $stack[count($stack)-1]){
+                    array_pop($stack);
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+        return empty($stack);
+    }
+}
