@@ -1,0 +1,22 @@
+class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @param Integer $target
+     * @return Integer
+     */
+    function searchInsert($nums, $target) {
+        $key = array_search($target,$nums);
+        if($key || $key === 0){
+            return $key;
+        }
+        else{
+            foreach($nums as $key => $value){
+                if($target<$value){
+                    return $key;
+                }
+            }
+            return $key+1;
+        }
+    }
+}
