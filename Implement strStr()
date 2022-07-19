@@ -1,0 +1,17 @@
+class Solution {
+
+    /**
+     * @param String $haystack
+     * @param String $needle
+     * @return Integer
+     */
+    function strStr($haystack, $needle) {
+        $output = strpos($haystack,$needle);
+        if($output || $output === 0){
+            return $output;
+        }
+        else{
+            return "-1";
+        }
+    }
+}
