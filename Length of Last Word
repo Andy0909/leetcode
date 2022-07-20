@@ -1,0 +1,15 @@
+class Solution {
+
+    /**
+     * @param String $s
+     * @return Integer
+     */
+    function lengthOfLastWord($s) {
+        $array = explode(" ",$s);
+        for($key=count($array)-1;$key>=0;$key--){
+            if(!empty($array[$key])){
+                return strlen($array[$key]);
+            };
+        }
+    }
+}
