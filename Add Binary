@@ -1,0 +1,25 @@
+class Solution {
+
+    /**
+     * @param String $a
+     * @param String $b
+     * @return String
+     */
+    function addBinary($a, $b) {
+        $numberA = 0;
+        $numberB = 0;
+        if(strlen($a)>0 && strlen($b)>0){
+            for($key=0;$key<strlen($a);$key++){
+                $numberA = $numberA + pow(2,$key)*$a[strlen($a)-1-$key];
+            }
+            for($key=0;$key<strlen($b);$key++){
+                $numberB = $numberB + pow(2,$key)*$b[strlen($b)-1-$key];
+            }
+        }
+        
+        $sum = $numberA+$numberB; 
+        //or use bindec()
+        //$sum = bindec($a)+bindec($b);
+        return decbin($sum);
+    }
+}
