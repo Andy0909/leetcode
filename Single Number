@@ -1,0 +1,23 @@
+class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @return Integer
+     */
+    function singleNumber($nums) {
+        $count = [];
+
+        foreach ($nums as $num) {
+            $key = array_search($num, $count);
+
+            if ($key !== false) {
+                unset($count[$key]);
+            } else {
+                array_push($count, $num);
+            }
+        }
+        $count = array_values($count);
+
+        return $count[0];
+    }
+}
