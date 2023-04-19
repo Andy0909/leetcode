@@ -1,3 +1,5 @@
+solution 1：
+
 class Solution {
 
     /**
@@ -19,5 +21,23 @@ class Solution {
         $count = array_values($count);
 
         return $count[0];
+    }
+}
+
+
+solution 2：
+
+class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @return Integer
+     */
+    function singleNumber($nums) {
+        $result = 0;
+        foreach ($nums as $num) {
+            $result ^= $num;
+        }
+        return $result;
     }
 }
