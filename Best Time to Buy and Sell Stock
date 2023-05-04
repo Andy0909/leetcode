@@ -5,7 +5,7 @@ class Solution {
      * @return Integer
      */
     function maxProfit($prices) {
-        $minPrice = PHP_INT_MAX;
+        $minPrice = max($prices);
         $maxProfit = 0;
         
         foreach ($prices as $price) {
