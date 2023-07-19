@@ -1,0 +1,23 @@
+class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @return Integer
+     */
+    function removeDuplicates(&$nums) {
+        if (count($nums) <= 1) {
+            return count($nums);
+        }
+
+        $arrayCount = 1;
+
+        for ($key = 1; $key < count($nums); $key++) {
+            if ($nums[$key] != $nums[$key-1]) {
+                $nums[$arrayCount] = $nums[$key];
+                $arrayCount ++;
+            }
+        }
+
+        return $arrayCount;
+    }
+}
